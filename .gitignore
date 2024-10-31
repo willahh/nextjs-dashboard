@@ -18,6 +18,8 @@
 # misc
 .DS_Store
 *.pem
+.clj-kondo
+.lsp
 
 # debug
 npm-debug.log*
