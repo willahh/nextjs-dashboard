@@ -3,6 +3,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbo",
+    "dev-debug-with-chrome": "NODE_OPTIONS='--inspect' next dev --turbo",
     "start": "next start"
   },
   "dependencies": {
