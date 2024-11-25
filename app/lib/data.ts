@@ -32,7 +32,7 @@ export async function fetchLatestInvoices() {
     console.log('fetchLatestInvoices');
     console.log('Fetching latest invoices data...');
     await new Promise((resolve) => setTimeout(resolve, 4000));
-    console.log('Latest invoices fetched !')
+    console.log('Latest invoices fetched !');
 
     const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
@@ -145,6 +145,7 @@ export async function fetchInvoicesPages(query: string) {
 }
 
 export async function fetchInvoiceById(id: string) {
+  console.log('fetchInvoiceById');
   try {
     const data = await sql<InvoiceForm>`
       SELECT
@@ -162,6 +163,7 @@ export async function fetchInvoiceById(id: string) {
       amount: invoice.amount / 100,
     }));
 
+    console.log('invoice', invoice[0]);
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);
